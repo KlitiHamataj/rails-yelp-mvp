@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Add a new review
   # get 'restaurants/restaurant_id/reviews/new', to: 'reviews#new'
   # post 'restaurants/restaurant_id/reviews', to: 'reviews#create'
+  root to: 'restaurants#index'
   resources :restaurants, only: [:index, :new, :create, :show] do
     resources :reviews, only: [:new, :create]
   end

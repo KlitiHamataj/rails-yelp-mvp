@@ -1,0 +1,21 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <h1>Restaurants</h1>
+  <%= link_to "Add a new restaurant", new_restaurant_path(@restaurant), class: "btn btn-success" %>
+</div>
+  <div class="container">
+    <div class="row">
+      <% @restaurants.each do |restaurant| %>
+        <div class="card" style="width: 18rem; margin: 10px">
+           <img class="card-img-top" src="https://source.unsplash.com/collection/95834848/1600x900" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title"><%= restaurant.name %></h5>
+            <p class="card-text"><%= restaurant.address %></p>
+             <%= link_to "View", restaurant_path(restaurant), class: "btn btn-info" %>
+           </div>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <br>
+
+  </div>
